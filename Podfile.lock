@@ -1,0 +1,40 @@
+PODS:
+  - Alamofire (4.9.0)
+  - Eureka (5.2.1)
+  - Socket.IO-Client-Swift (15.0.0):
+    - Starscream (~> 3.1)
+  - Starscream (3.1.1)
+  - TTTAttributedLabel (2.0.0)
+  - VeriffSDK (2.8.4):
+    - Socket.IO-Client-Swift (~> 15.0.0)
+    - VeriffWebRTC (~> 1.0.1)
+  - VeriffWebRTC (1.0.1)
+
+DEPENDENCIES:
+  - Alamofire (= 4.9.0)
+  - Eureka
+  - TTTAttributedLabel
+  - VeriffSDK
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Eureka
+    - Socket.IO-Client-Swift
+    - Starscream
+    - TTTAttributedLabel
+    - VeriffSDK
+    - VeriffWebRTC
+
+SPEC CHECKSUMS:
+  Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
+  Eureka: c883105488e05bc65539f583246ecf9657cabbfe
+  Socket.IO-Client-Swift: c039a808195d22a7192962841b8c035cb61ea49e
+  Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
+  TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
+  VeriffSDK: 367836e21df29ff78045debfc0aeb3a9dea31493
+  VeriffWebRTC: 47806fee639a69ae5f82f2b031d20f0014d4a016
+
+PODFILE CHECKSUM: dd95324457f5ec79f910c9d19f71ed7586785d19
+
+COCOAPODS: 1.9.1
