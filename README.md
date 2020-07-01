@@ -1,4 +1,4 @@
-# puzzl-iOS
+# Welcome to Puzzl's iOS SDK
 Puzzl iOS SDK for rendering Puzzl's Employee Onboarding flow
 
 ## Add Puzzl SDK to a project
@@ -92,7 +92,7 @@ Veriff iOS SDK requires camera and microphone permissions for capturing photos a
 
     ```swift
     Puzzl.setDelegate(from: <YOUR VIEW CONTROLLER>)
-    Puzzl.showOnboardingWith(apiKey: <PUZZL LIVE KEY>,
+    Puzzl.showOnboarding(apiKey: <PUZZL LIVE KEY>,
                              companyID: <PUZZL COMPANY ID>,
                              workerID: <PUZZL EMPLOYEE ID>,
                              from: <YOUR VIEW CONTROLLER>)
