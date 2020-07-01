@@ -1,4 +1,4 @@
-![Puzzl](https://github.com/Puzzl/puzzl-iOS/puzzl-logo.png "Puzzl")
+![Puzzl](/puzzl-logo.png "Puzzl")
 
 # Welcome to Puzzl's iOS SDK
 Puzzl iOS SDK for rendering Puzzl's Employee Onboarding flow
