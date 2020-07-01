@@ -1,4 +1,4 @@
-![Puzzl](/puzzl-logo.png "Puzzl" style="width:300px;")
+<img src="/puzzl-logo.png" alt="Puzzl" style="width:100px;"/>
 
 # Welcome to Puzzl's iOS SDK
 Puzzl iOS SDK for rendering Puzzl's Employee Onboarding flow
