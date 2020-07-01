@@ -12,16 +12,12 @@ $ sudo gem install cocoapods
 ```
 
 1. Create a Podfile in project directory (same directory as .xcodeproj file)
-2. Open Podfile and include the PuzzlIOS dependency. **You have to also add other dependencies that Puzzl relies on.** An example is shown here: 
+2. Open Podfile and include the PuzzlIOS dependency. An example is shown here: 
 
 ```bash
 target "YourProjectNameHere" do
 use_frameworks!
 	pod 'PuzzlIOS'
-	pod 'Alamofire', '4.9.0'
-  pod 'VeriffSDK'
-  pod 'Eureka'
-  pod 'TTTAttributedLabel'
 end
 ```
 
@@ -47,7 +43,7 @@ If you prefer not to use any of the aforementioned dependency managers, you can 
 - Add Puzzl as a git [submodule](https://git-scm.com/docs/git-submodule) by running the following command:
 
     ```bash
-    $ git submodule add https://gitlab.com/puzzl/puzzl-ios-mobile-onboarding.git
+    $ git submodule add https://github.com/Puzzl/puzzl-iOS
     ```
 
 - Open the new Puzzl folder, and drag the `Puzzl-iOS.xcodeproj` into the Project Navigator of your application's Xcode project.
@@ -64,11 +60,6 @@ If you prefer not to use any of the aforementioned dependency managers, you can 
 
     > The Puzzl_iOS.framework is automatically added as a target dependency, linked framework and embedded framework in a copy files build phase which is all you need to build on the simulator and a device.
 
-- **Note:** Puzzl requires other dependencies. Please integrate these other frameworks manually or use a dependency manager:
-    - 'Alamofire', '4.9.0'
-    - 'VeriffSDK'
-    - 'Eureka'
-    - 'TTTAttributedLabel'
 
 ## Using the Puzzl iOS SDK
 
@@ -124,4 +115,4 @@ Veriff iOS SDK requires camera and microphone permissions for capturing photos a
     }
     ```
 
-    Once the worker onboards successfully, you can now run payroll for them!
+    Once the worker onboards successfully, you can now run payroll for them! 🎉 
