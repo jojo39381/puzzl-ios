@@ -45,6 +45,38 @@
 		C1BB354F2458AEDF003C380D /* UIViewController+Exit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BB354E2458AEDF003C380D /* UIViewController+Exit.swift */; };
 		C1BB35662458B525003C380D /* PZFinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BB35652458B525003C380D /* PZFinishViewController.swift */; };
 		C1BB35712458C8C5003C380D /* PZProfileInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BB35702458C8C5003C380D /* PZProfileInformationViewController.swift */; };
+		D47FCC7324CB2E8400265CB1 /* Double+Scale.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BB351024584DF8003C380D /* Double+Scale.swift */; };
+		D47FCC7424CB2E8400265CB1 /* UIStoryboard+AppStroryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BB352124587827003C380D /* UIStoryboard+AppStroryboard.swift */; };
+		D47FCC7524CB2E8400265CB1 /* UIViewController+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BB352324587A6B003C380D /* UIViewController+Identifier.swift */; };
+		D47FCC7624CB2E8400265CB1 /* UIViewController+AppControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BB352524587B6A003C380D /* UIViewController+AppControllers.swift */; };
+		D47FCC7724CB2E8400265CB1 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BB352F24587DA0003C380D /* CustomFont.swift */; };
+		D47FCC7824CB2E8400265CB1 /* UIViewController+NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BB353124587E99003C380D /* UIViewController+NavigationBar.swift */; };
+		D47FCC7924CB2E8400265CB1 /* UIViewController+Exit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BB354E2458AEDF003C380D /* UIViewController+Exit.swift */; };
+		D47FCC7A24CB2E8400265CB1 /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1765A9C2459DDA50080ACA1 /* UIViewController+Keyboard.swift */; };
+		D47FCC7B24CB2E8400265CB1 /* Encodable+Dict.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1347CCC245B369B00AAF44C /* Encodable+Dict.swift */; };
+		D47FCC7C24CB2E8400265CB1 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1347CCE245B36C200AAF44C /* UIViewController+Alert.swift */; };
+		D47FCC7D24CB2E9600265CB1 /* PZWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1347CDD245B3C8300AAF44C /* PZWebViewController.swift */; };
+		D47FCC7E24CB2E9600265CB1 /* PZVeriffViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1347C45245AD40E00AAF44C /* PZVeriffViewController.swift */; };
+		D47FCC7F24CB2E9600265CB1 /* PZCreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1765ABB2459EEE60080ACA1 /* PZCreateAccountViewController.swift */; };
+		D47FCC8024CB2E9600265CB1 /* PZProfileInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BB35702458C8C5003C380D /* PZProfileInformationViewController.swift */; };
+		D47FCC8124CB2E9600265CB1 /* RootNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BB351F24587684003C380D /* RootNavigationController.swift */; };
+		D47FCC8224CB2E9600265CB1 /* PZFinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BB35652458B525003C380D /* PZFinishViewController.swift */; };
+		D47FCC8324CB2E9600265CB1 /* PZExitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BB354C2458AA05003C380D /* PZExitViewController.swift */; };
+		D47FCC8424CB2E9600265CB1 /* PZIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F3D7BF244EFC39007CC75A /* PZIntroViewController.swift */; };
+		D47FCC8524CB2E9600265CB1 /* PZDatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1765AB32459E1C10080ACA1 /* PZDatePickerViewController.swift */; };
+		D47FCC8624CB2EA000265CB1 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1765AD62459FE6F0080ACA1 /* BaseResponse.swift */; };
+		D47FCC8724CB2EA000265CB1 /* GetUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1765ADA2459FF9A0080ACA1 /* GetUserModel.swift */; };
+		D47FCC8824CB2EA000265CB1 /* GetWorkerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1765AEA245A04140080ACA1 /* GetWorkerModel.swift */; };
+		D47FCC8924CB2EA000265CB1 /* SignW2Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1347C42245AC9A300AAF44C /* SignW2Model.swift */; };
+		D47FCC8A24CB2EA000265CB1 /* VeriffModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1347CB2245B2C7900AAF44C /* VeriffModel.swift */; };
+		D47FCC8B24CB2EA000265CB1 /* HellosignModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1347CF724601C7E00AAF44C /* HellosignModel.swift */; };
+		D47FCC8C24CB2EA000265CB1 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1765AAC2459E0AE0080ACA1 /* Animator.swift */; };
+		D47FCC8D24CB2EA000265CB1 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1765AC92459FA950080ACA1 /* NetworkService.swift */; };
+		D47FCC8E24CB2EA000265CB1 /* ResponseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1765ACB2459FBE70080ACA1 /* ResponseService.swift */; };
+		D47FCC8F24CB2EA000265CB1 /* PassingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1765AD82459FF7C0080ACA1 /* PassingData.swift */; };
+		D47FCC9024CB2EA000265CB1 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1765A9F2459DF240080ACA1 /* TextField.swift */; };
+		D47FCC9124CB2EA000265CB1 /* PaddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1765AA52459DFE70080ACA1 /* PaddedLabel.swift */; };
+		D47FCC9224CB2EA500265CB1 /* Puzzl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F3D7C3244F0732007CC75A /* Puzzl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -537,6 +569,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D47FCC7724CB2E8400265CB1 /* CustomFont.swift in Sources */,
+				D47FCC8224CB2E9600265CB1 /* PZFinishViewController.swift in Sources */,
+				D47FCC8524CB2E9600265CB1 /* PZDatePickerViewController.swift in Sources */,
+				D47FCC9024CB2EA000265CB1 /* TextField.swift in Sources */,
+				D47FCC7D24CB2E9600265CB1 /* PZWebViewController.swift in Sources */,
+				D47FCC7624CB2E8400265CB1 /* UIViewController+AppControllers.swift in Sources */,
+				D47FCC8024CB2E9600265CB1 /* PZProfileInformationViewController.swift in Sources */,
+				D47FCC7B24CB2E8400265CB1 /* Encodable+Dict.swift in Sources */,
+				D47FCC7924CB2E8400265CB1 /* UIViewController+Exit.swift in Sources */,
+				D47FCC7A24CB2E8400265CB1 /* UIViewController+Keyboard.swift in Sources */,
+				D47FCC8724CB2EA000265CB1 /* GetUserModel.swift in Sources */,
+				D47FCC9224CB2EA500265CB1 /* Puzzl.swift in Sources */,
+				D47FCC7C24CB2E8400265CB1 /* UIViewController+Alert.swift in Sources */,
+				D47FCC8324CB2E9600265CB1 /* PZExitViewController.swift in Sources */,
+				D47FCC8824CB2EA000265CB1 /* GetWorkerModel.swift in Sources */,
+				D47FCC8D24CB2EA000265CB1 /* NetworkService.swift in Sources */,
+				D47FCC8124CB2E9600265CB1 /* RootNavigationController.swift in Sources */,
+				D47FCC7424CB2E8400265CB1 /* UIStoryboard+AppStroryboard.swift in Sources */,
+				D47FCC9124CB2EA000265CB1 /* PaddedLabel.swift in Sources */,
+				D47FCC8F24CB2EA000265CB1 /* PassingData.swift in Sources */,
+				D47FCC7524CB2E8400265CB1 /* UIViewController+Identifier.swift in Sources */,
+				D47FCC7F24CB2E9600265CB1 /* PZCreateAccountViewController.swift in Sources */,
+				D47FCC8624CB2EA000265CB1 /* BaseResponse.swift in Sources */,
+				D47FCC7824CB2E8400265CB1 /* UIViewController+NavigationBar.swift in Sources */,
+				D47FCC8E24CB2EA000265CB1 /* ResponseService.swift in Sources */,
+				D47FCC8424CB2E9600265CB1 /* PZIntroViewController.swift in Sources */,
+				D47FCC8C24CB2EA000265CB1 /* Animator.swift in Sources */,
+				D47FCC7E24CB2E9600265CB1 /* PZVeriffViewController.swift in Sources */,
+				D47FCC7324CB2E8400265CB1 /* Double+Scale.swift in Sources */,
+				D47FCC8924CB2EA000265CB1 /* SignW2Model.swift in Sources */,
+				D47FCC8B24CB2EA000265CB1 /* HellosignModel.swift in Sources */,
+				D47FCC8A24CB2EA000265CB1 /* VeriffModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -78,7 +78,7 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "https://github.com/Puzzl/puzzl-iOS.git", :commit => "f1fd8190435aa642078f6677482abe8c51d975a0", :tag => '1.0.0' }
+  spec.source       = { :git => "https://github.com/Puzzl/puzzl-iOS.git", :tag => '1.0.1' }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -118,6 +118,8 @@ Pod::Spec.new do |spec|
 
   # spec.framework  = "SomeFramework"
   # spec.frameworks = "Alamofire", "VeriffSDK", "Eureka", "TTTAttributedLabel"
+  spec.ios.framework = "UIKit"
+  spec.ios.framework = "Foundation"
   spec.dependency 'Alamofire', '~> 4.9.0'
   spec.dependency 'VeriffSDK'
   spec.dependency 'Eureka'
