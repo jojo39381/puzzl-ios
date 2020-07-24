@@ -88,6 +88,7 @@ Pod::Spec.new do |spec|
   #  For header files it will include any header in the folder.
   #  Not including the public_header_files will make all headers public.
   #
+  spec.swift_versions = ['5.1', '5.2']
   spec.source_files       = 'Puzzl-iOS/Common/*.swift'
   spec.ios.source_files   = 'Puzzl-iOS/Extensions/*.swift', 'Puzzl-iOS/Models/*.swift', 'Puzzl-iOS/Services/*.swift', 'Puzzl-iOS/ViewControllers/*.swift'
 
@@ -116,7 +117,11 @@ Pod::Spec.new do |spec|
   #
 
   # spec.framework  = "SomeFramework"
-  spec.frameworks = "Alamofire", "VeriffSDK", "Eureka", "TTTAttributedLabel"
+  # spec.frameworks = "Alamofire", "VeriffSDK", "Eureka", "TTTAttributedLabel"
+  spec.dependency 'Alamofire', '~> 4.9.0'
+  spec.dependency 'VeriffSDK'
+  spec.dependency 'Eureka'
+  spec.dependency 'TTTAttributedLabel'
 
   # spec.library   = "iconv"
   # spec.libraries = "iconv", "xml2"
