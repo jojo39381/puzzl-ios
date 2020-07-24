@@ -78,7 +78,7 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "https://github.com/Puzzl/puzzl-iOS.git", :tag => '1.0.1' }
+  spec.source       = { :git => "https://github.com/Puzzl/puzzl-iOS.git", :tag => '1.0.2' }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -90,7 +90,7 @@ Pod::Spec.new do |spec|
   #
   spec.swift_versions = ['5.1', '5.2']
   spec.source_files       = 'Puzzl-iOS/Common/*.swift'
-  spec.ios.source_files   = 'Puzzl-iOS/Extensions/*.swift', 'Puzzl-iOS/Models/*.swift', 'Puzzl-iOS/Services/*.swift', 'Puzzl-iOS/ViewControllers/*.swift'
+  spec.ios.source_files   = 'Puzzl-iOS/Extensions/*.swift', 'Puzzl-iOS/Models/*.swift', 'Puzzl-iOS/Services/*.swift', 'Puzzl-iOS/ViewControllers/**/*.swift', 'Puzzl-iOS/*.swift'
 
 
   # spec.public_header_files = "Classes/**/*.h"
