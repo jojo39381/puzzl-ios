@@ -20,13 +20,13 @@
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
-    <key>NSCameraUsageDescription</key>
-    <string>${PRODUCT_NAME} Camera Usage</string>
-    <key>NSMicrophoneUsageDescription</key>
-    <string>${PRODUCT_NAME} Microphone Usage</string>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-        <string>Cydia</string>
-    </array>
+	<key>NSCameraUsageDescription</key>
+	<string>${PRODUCT_NAME} Camera Usage</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>${PRODUCT_NAME} Microphone Usage</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>Cydia</string>
+	</array>
 </dict>
 </plist>

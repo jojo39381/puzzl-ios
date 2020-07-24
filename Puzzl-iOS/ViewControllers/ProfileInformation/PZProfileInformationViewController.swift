@@ -200,7 +200,7 @@ extension PZProfileInformationViewController: UITextFieldDelegate {
             PassingData.shared.signW2Model.phoneNumber = textField.text ?? ""
         case addressTextField:
             PassingData.shared.signW2Model.address = textField.text ?? ""
-        case stateTexxtField:
+        case stateTextField:
             PassingData.shared.signW2Model.state = textField.text ?? ""
         case zipTextField:
             PassingData.shared.signW2Model.zip = Int(textField.text ?? "") ?? 0
