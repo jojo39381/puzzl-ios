@@ -25,7 +25,7 @@ class PZVeriffViewController: UIViewController {
     @IBAction func nextAction(_ sender: Any) {
         print(PassingData.shared.signW2Model.dictionary ?? [:])
         ResponseService.shared.signW2(parameters: PassingData.shared.signW2Model.dictionary ?? [:], completion: { [weak self] response in
-            if let error = response.error { self?.showDefaultAlert(title: error.message ?? "") }
+            if let error = response.error { self?.showDefaultAlert(title: error.message as! String ?? "") }
             else if let model = response.response {
                 PassingData.shared.helloSignModel = model
                 
@@ -90,7 +90,7 @@ extension PZVeriffViewController {
                                                timestamp: dateFormatter.string(from: Date()),
                                                document: PassingData.shared.isPassport ? ["type" : "PASSPORT", "country" : "US"] : ["type" : "DRIVERS_LICENSE", "country" : "US"],
                                                completion: { [weak self] response in
-                                                if let error = response.error { self?.showDefaultAlert(title: error.message ?? "") }
+                                                if let error = response.error { self?.showDefaultAlert(title: error.message as! String ?? "") }
                                                 else if let verification = response.response?.verification {
                                                     PassingData.shared.veriffId = verification.id
                                                     self?.veriff(url: verification.host , token: verification.sessionToken)

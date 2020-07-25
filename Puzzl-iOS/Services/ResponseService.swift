@@ -30,6 +30,7 @@ extension ResponseService {
             networkService.handleRequest(networkService.createRequest(url, method: .get, encoding: JSONEncoding.default),
                                          completion: completion)
         } catch {
+        
             print(error.localizedDescription)
         }
     }
@@ -37,13 +38,14 @@ extension ResponseService {
     public func getWorkerInfo(completion:@escaping ((Response<GetWorkerModel>)->())) {
         var url = "\(BASE_URL)/getWorkerInfo"
         let parameters: [String : String] =    ["companyID" : "\(Puzzl.companyID)",
-                                                "id" : "\(Puzzl.workerID)"]
+                                                "employeeID" : "\(Puzzl.workerID)"]
         
         do {
             url = try networkService.createQuery(to: url, parameters: parameters)
             networkService.handleRequest(networkService.createRequest(url, method: .get, encoding: JSONEncoding.default),
                                          completion: completion)
         } catch {
+            print("HELLO!")
             print(error.localizedDescription)
         }
     }
@@ -98,7 +100,7 @@ extension ResponseService {
             formData.append(PassingData.shared.password.data(using: .utf8) ?? Data(), withName: "password")
             formData.append("\(PassingData.shared.signW2Model.defaultWage)".data(using: .utf8) ?? Data(), withName: "default_wage")
             formData.append("\(PassingData.shared.signW2Model.defaultOtWage)".data(using: .utf8) ?? Data(), withName: "default_ot_wage")
-            formData.append(PassingData.shared.signW2Model.createdAt.data(using: .utf8) ?? Data(), withName: "createdAt")
+//            formData.append(PassingData.shared.signW2Model.createdAt.data(using: .utf8) ?? Data(), withName: "createdAt")
             if let employeeSigId = PassingData.shared.helloSignModel?.employee_sigId {
                 formData.append(employeeSigId.data(using: .utf8) ?? Data(), withName: "employee_sigId")
             }

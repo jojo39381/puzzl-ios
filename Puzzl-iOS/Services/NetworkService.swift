@@ -62,7 +62,8 @@ class NetworkService {
                     completion(Response(response: nil, error: .defaultError))
                     return
                 }
-                completion(Response(response: nil, error: ApiError(type: .custom, message: "Error")))
+                print(response.data)
+                completion(Response(response: nil, error: ApiError(type: .custom, message: NSString(data: response.data!, encoding: String.Encoding.utf8.rawValue) as String?)))
                 return
             }
         }
@@ -75,7 +76,7 @@ class NetworkService {
             if isBaseResponse {
                 let response = try JSONDecoder().decode(BaseResponse<T>.self, from: jsonData)
                 guard let decodedResponse = response.data else {
-                    completion(Response(response: nil, error: ApiError(type: .custom, message: "Error")))
+                    completion(Response(response: nil, error: ApiError(type: .custom, message: NSString(data: response.data! as! Data, encoding: String.Encoding.utf8.rawValue) as String?)))
                     return
                 }
                 completion(Response(response: decodedResponse, error: nil))

@@ -20,13 +20,13 @@ class SignW2Model: Codable {
     var ssn: String
     var email: String
     var phoneNumber: String
-    var createdAt: String
+ 
     var title: String
     var defaultWage: Double
     var defaultOtWage: Double
     
     private enum CodingKeys: String, CodingKey {
-        case createdAt
+ 
         case email
         case firstName = "first_name"
         case lastName = "last_name"
@@ -57,7 +57,6 @@ class SignW2Model: Codable {
         ssn = ""
         email = ""
         phoneNumber = ""
-        createdAt = ""
         title = ""
         defaultWage = 0.0
         defaultOtWage = 0.0

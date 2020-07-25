@@ -10,13 +10,12 @@ import Foundation
 
 class GetWorkerModel: Codable {
     
-    var createdAt: String
     var email: String
     var firstName: String
     var lastName: String
     
     private enum CodingKeys: String, CodingKey {
-        case createdAt
+
         case email
         case firstName = "first_name"
         case lastName = "last_name"
