@@ -34,7 +34,7 @@
 		C1765ADB2459FF9A0080ACA1 /* GetUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1765ADA2459FF9A0080ACA1 /* GetUserModel.swift */; };
 		C1765AEB245A04140080ACA1 /* GetWorkerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1765AEA245A04140080ACA1 /* GetWorkerModel.swift */; };
 		C1BB351124584DF8003C380D /* Double+Scale.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BB351024584DF8003C380D /* Double+Scale.swift */; };
-		C1BB351E24587655003C380D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1BB351D24587655003C380D /* Main.storyboard */; };
+		C1BB351E24587655003C380D /* PuzzlMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1BB351D24587655003C380D /* PuzzlMain.storyboard */; };
 		C1BB352024587684003C380D /* RootNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BB351F24587684003C380D /* RootNavigationController.swift */; };
 		C1BB352224587827003C380D /* UIStoryboard+AppStroryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BB352124587827003C380D /* UIStoryboard+AppStroryboard.swift */; };
 		C1BB352424587A6B003C380D /* UIViewController+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BB352324587A6B003C380D /* UIViewController+Identifier.swift */; };
@@ -121,7 +121,7 @@
 		C1765ADA2459FF9A0080ACA1 /* GetUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserModel.swift; sourceTree = "<group>"; };
 		C1765AEA245A04140080ACA1 /* GetWorkerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWorkerModel.swift; sourceTree = "<group>"; };
 		C1BB351024584DF8003C380D /* Double+Scale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Scale.swift"; sourceTree = "<group>"; };
-		C1BB351D24587655003C380D /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		C1BB351D24587655003C380D /* PuzzlMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PuzzlMain.storyboard; sourceTree = "<group>"; };
 		C1BB351F24587684003C380D /* RootNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationController.swift; sourceTree = "<group>"; };
 		C1BB352124587827003C380D /* UIStoryboard+AppStroryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+AppStroryboard.swift"; sourceTree = "<group>"; };
 		C1BB352324587A6B003C380D /* UIViewController+Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Identifier.swift"; sourceTree = "<group>"; };
@@ -306,7 +306,7 @@
 				C1BB354B2458A9EA003C380D /* Exit */,
 				C1BB350F24584DDD003C380D /* Intro */,
 				C1765AB22459E1650080ACA1 /* DatePicker */,
-				C1BB351D24587655003C380D /* Main.storyboard */,
+				C1BB351D24587655003C380D /* PuzzlMain.storyboard */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -447,7 +447,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1BB351E24587655003C380D /* Main.storyboard in Resources */,
+				C1BB351E24587655003C380D /* PuzzlMain.storyboard in Resources */,
 				24179D102451A64A00067F37 /* Media.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

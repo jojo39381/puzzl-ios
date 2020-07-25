@@ -11,6 +11,6 @@ import UIKit
 extension UIStoryboard {
     class var main: UIStoryboard {
         let bundle = Bundle(identifier: "puzzle-dev.nyblecraft.Puzzl-iOS")
-        return UIStoryboard(name: "Main", bundle: bundle)
+        return UIStoryboard(name: "PuzzlMain", bundle: bundle)
     }
 }
