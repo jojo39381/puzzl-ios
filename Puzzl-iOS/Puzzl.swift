@@ -23,7 +23,7 @@ public class Puzzl {
     
     static var apiKey = String()
     static var companyID = String()
-    static var workerID = String()
+    static var employeeID = String()
     static var error = String()
     
     static weak var delegate: PuzzlDelegate?
@@ -32,10 +32,10 @@ public class Puzzl {
         delegate = vc as! PuzzlDelegate
     }
     
-    public class func showOnboardingWith(apiKey: String, companyID: String, workerID: String, from vc: UIViewController) {
+    public class func showOnboardingWith(apiKey: String, companyID: String, employeeID: String, from vc: UIViewController) {
         self.apiKey = apiKey
         self.companyID = companyID
-        self.workerID = workerID
+        self.employeeID = employeeID
         
         let group = DispatchGroup()
         
@@ -52,11 +52,11 @@ public class Puzzl {
         }
         
         group.enter()
-        ResponseService.shared.getWorkerInfo { (response) in
+        ResponseService.shared.getEmployeeInfo { (response) in
 
             if let response = response.response {
-                PassingData.shared.workerModel = response
-                print("success getWorkerInfo")
+                PassingData.shared.employeeModel = response
+                print("success getEmployeeInfo")
                 
 //                PassingData.shared.signW2Model.createdAt = response.createdAt
             } else if let _ = response.error {
@@ -65,6 +65,21 @@ public class Puzzl {
             }
             group.leave()
         }
+        
+        group.enter()
+        ResponseService.shared.generateSSCardPutURL { (response) in
+
+                    if let response = response.response {
+                        PassingData.shared.SSCardURL = response
+                        print("success created S3 URL")
+                        
+        //                PassingData.shared.signW2Model.createdAt = response.createdAt
+                    } else if let _ = response.error {
+                        print("hmmmmm")
+                        self.error = "Error"
+                    }
+                    group.leave()
+                }
         
         group.notify(queue: .main, execute: {
             if self.error == "Error" {

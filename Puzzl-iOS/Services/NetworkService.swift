@@ -112,5 +112,9 @@ class NetworkService {
     public static func getHeaders() -> HTTPHeaders {
         return ["Authorization" : "Bearer \(Puzzl.apiKey)"]
     }
+    
+    public static func getUploadHeaders() -> HTTPHeaders {
+        return ["Content-type" : "image/jpeg"]
+    }
 }
 

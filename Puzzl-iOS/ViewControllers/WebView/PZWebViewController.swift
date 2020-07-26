@@ -16,7 +16,7 @@ class PZWebViewController: UIViewController, WKScriptMessageHandler {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureWebbView()
-        ResponseService.shared.onboardWorker()
+//        ResponseService.shared.onboardEmployee()
     }
     
     override func viewWillDisappear(_ animated: Bool) {

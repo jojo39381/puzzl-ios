@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "puzzl-iOS"
-  spec.version      = "1.0.4"
+  spec.version      = "1.0.5"
   spec.summary      = "Puzzl iOS SDK for rendering Puzzl's Employee Onboarding flow"
 
   # This description is used to generate tags and improve search results.
@@ -89,7 +89,7 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
   spec.swift_versions = ['5.1', '5.2']
-  spec.resources = "Puzzl-iOS/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
+  spec.resources = "Puzzl-iOS/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}", "*.{png,jpeg,jpg,storyboard,xib,xcassets}" 
   spec.source_files       = 'Puzzl-iOS/Common/*.swift'
   spec.ios.source_files   = 'Puzzl-iOS/Extensions/*.swift', 'Puzzl-iOS/Models/*.swift', 'Puzzl-iOS/Services/*.swift', 'Puzzl-iOS/ViewControllers/**/*.swift', 'Puzzl-iOS/*.swift'
 

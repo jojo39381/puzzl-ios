@@ -23,7 +23,9 @@ class PZVeriffViewController: UIViewController {
     
     
     @IBAction func nextAction(_ sender: Any) {
+        
         print(PassingData.shared.signW2Model.dictionary ?? [:])
+        ResponseService.shared.submitWorkerVerification()
         ResponseService.shared.signW2(parameters: PassingData.shared.signW2Model.dictionary ?? [:], completion: { [weak self] response in
             if let error = response.error { self?.showDefaultAlert(title: error.message as! String ?? "") }
             else if let model = response.response {

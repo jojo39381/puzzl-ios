@@ -19,7 +19,8 @@ class PZFinishViewController: UIViewController {
     @IBOutlet var constarintFinishHeight: NSLayoutConstraint? //50
     
     @IBAction func finishAction(_ sender: Any) {
-        ResponseService.shared.onboardWorker()
+        ResponseService.shared.submitWorkerPaperwork()
+        ResponseService.shared.onboardEmployee()
         navigationController?.dismiss(animated: true, completion: nil)
         Puzzl.delegate?.getStatus(status: .success)
     }

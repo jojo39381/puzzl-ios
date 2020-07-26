@@ -69,7 +69,7 @@ class PZProfileInformationViewController: UIViewController {
         let stirng = "\(ssn1 ?? "0")\(ssn2 ?? "0")\(ssn3 ?? "0")"
         PassingData.shared.last4 = ssn3
         PassingData.shared.signW2Model.ssn = stirng
-        
+        ResponseService.shared.submitWorkerProfileInfo()
         let createAccount = UIViewController.createAccount
         navigationController?.pushViewController(createAccount, animated: true)
     }
@@ -215,6 +215,7 @@ extension PZProfileInformationViewController: UITextFieldDelegate {
         default:
             break
         }
+        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

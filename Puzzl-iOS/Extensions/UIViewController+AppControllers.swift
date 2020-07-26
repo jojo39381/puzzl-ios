@@ -49,6 +49,7 @@ extension UIViewController {
     
     class var createAccount: PZCreateAccountViewController {
         let viewController = UIStoryboard.main.instantiateViewController(withIdentifier: PZCreateAccountViewController.identifier) as! PZCreateAccountViewController
+        print("Account Created")
         if #available(iOS 13.0, *) { viewController.isModalInPresentation = false }
         viewController.modalPresentationStyle = .fullScreen
         return viewController

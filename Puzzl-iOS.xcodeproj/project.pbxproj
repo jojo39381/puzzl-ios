@@ -32,7 +32,6 @@
 		C1765AD72459FE6F0080ACA1 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1765AD62459FE6F0080ACA1 /* BaseResponse.swift */; };
 		C1765AD92459FF7C0080ACA1 /* PassingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1765AD82459FF7C0080ACA1 /* PassingData.swift */; };
 		C1765ADB2459FF9A0080ACA1 /* GetUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1765ADA2459FF9A0080ACA1 /* GetUserModel.swift */; };
-		C1765AEB245A04140080ACA1 /* GetWorkerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1765AEA245A04140080ACA1 /* GetWorkerModel.swift */; };
 		C1BB351124584DF8003C380D /* Double+Scale.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BB351024584DF8003C380D /* Double+Scale.swift */; };
 		C1BB351E24587655003C380D /* PuzzlMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1BB351D24587655003C380D /* PuzzlMain.storyboard */; };
 		C1BB352024587684003C380D /* RootNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BB351F24587684003C380D /* RootNavigationController.swift */; };
@@ -66,7 +65,7 @@
 		D47FCC8524CB2E9600265CB1 /* PZDatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1765AB32459E1C10080ACA1 /* PZDatePickerViewController.swift */; };
 		D47FCC8624CB2EA000265CB1 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1765AD62459FE6F0080ACA1 /* BaseResponse.swift */; };
 		D47FCC8724CB2EA000265CB1 /* GetUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1765ADA2459FF9A0080ACA1 /* GetUserModel.swift */; };
-		D47FCC8824CB2EA000265CB1 /* GetWorkerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1765AEA245A04140080ACA1 /* GetWorkerModel.swift */; };
+		D47FCC8824CB2EA000265CB1 /* GetEmployeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1765AEA245A04140080ACA1 /* GetEmployeeModel.swift */; };
 		D47FCC8924CB2EA000265CB1 /* SignW2Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1347C42245AC9A300AAF44C /* SignW2Model.swift */; };
 		D47FCC8A24CB2EA000265CB1 /* VeriffModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1347CB2245B2C7900AAF44C /* VeriffModel.swift */; };
 		D47FCC8B24CB2EA000265CB1 /* HellosignModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1347CF724601C7E00AAF44C /* HellosignModel.swift */; };
@@ -77,6 +76,8 @@
 		D47FCC9024CB2EA000265CB1 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1765A9F2459DF240080ACA1 /* TextField.swift */; };
 		D47FCC9124CB2EA000265CB1 /* PaddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1765AA52459DFE70080ACA1 /* PaddedLabel.swift */; };
 		D47FCC9224CB2EA500265CB1 /* Puzzl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F3D7C3244F0732007CC75A /* Puzzl.swift */; };
+		D4A23DCE24CD70D8002E8BAB /* GetEmployeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1765AEA245A04140080ACA1 /* GetEmployeeModel.swift */; };
+		D4A23DD024CDF780002E8BAB /* SSCardURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A23DCF24CDF780002E8BAB /* SSCardURL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,7 +120,7 @@
 		C1765AD62459FE6F0080ACA1 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		C1765AD82459FF7C0080ACA1 /* PassingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassingData.swift; sourceTree = "<group>"; };
 		C1765ADA2459FF9A0080ACA1 /* GetUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserModel.swift; sourceTree = "<group>"; };
-		C1765AEA245A04140080ACA1 /* GetWorkerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWorkerModel.swift; sourceTree = "<group>"; };
+		C1765AEA245A04140080ACA1 /* GetEmployeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEmployeeModel.swift; sourceTree = "<group>"; };
 		C1BB351024584DF8003C380D /* Double+Scale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Scale.swift"; sourceTree = "<group>"; };
 		C1BB351D24587655003C380D /* PuzzlMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PuzzlMain.storyboard; sourceTree = "<group>"; };
 		C1BB351F24587684003C380D /* RootNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationController.swift; sourceTree = "<group>"; };
@@ -132,6 +133,7 @@
 		C1BB354E2458AEDF003C380D /* UIViewController+Exit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Exit.swift"; sourceTree = "<group>"; };
 		C1BB35652458B525003C380D /* PZFinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PZFinishViewController.swift; sourceTree = "<group>"; };
 		C1BB35702458C8C5003C380D /* PZProfileInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PZProfileInformationViewController.swift; sourceTree = "<group>"; };
+		D4A23DCF24CDF780002E8BAB /* SSCardURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSCardURL.swift; sourceTree = "<group>"; };
 		DB4C05F65C6115558711725E /* Pods_Puzzl_iOS_Puzzl_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Puzzl_iOS_Puzzl_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAEC1EDA9D1EE68DBC067436 /* Pods-Puzzl-iOS-Puzzl-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Puzzl-iOS-Puzzl-iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Puzzl-iOS-Puzzl-iOSTests/Pods-Puzzl-iOS-Puzzl-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -269,10 +271,11 @@
 			children = (
 				C1765AD62459FE6F0080ACA1 /* BaseResponse.swift */,
 				C1765ADA2459FF9A0080ACA1 /* GetUserModel.swift */,
-				C1765AEA245A04140080ACA1 /* GetWorkerModel.swift */,
+				C1765AEA245A04140080ACA1 /* GetEmployeeModel.swift */,
 				C1347C42245AC9A300AAF44C /* SignW2Model.swift */,
 				C1347CB2245B2C7900AAF44C /* VeriffModel.swift */,
 				C1347CF724601C7E00AAF44C /* HellosignModel.swift */,
+				D4A23DCF24CDF780002E8BAB /* SSCardURL.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -530,6 +533,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4A23DCE24CD70D8002E8BAB /* GetEmployeeModel.swift in Sources */,
 				C1765AB42459E1C10080ACA1 /* PZDatePickerViewController.swift in Sources */,
 				24F3D7C4244F0732007CC75A /* Puzzl.swift in Sources */,
 				C1765ABC2459EEE60080ACA1 /* PZCreateAccountViewController.swift in Sources */,
@@ -550,13 +554,13 @@
 				C1347CCF245B36C200AAF44C /* UIViewController+Alert.swift in Sources */,
 				C1BB351124584DF8003C380D /* Double+Scale.swift in Sources */,
 				C1347CCD245B369B00AAF44C /* Encodable+Dict.swift in Sources */,
+				D4A23DD024CDF780002E8BAB /* SSCardURL.swift in Sources */,
 				C1BB353024587DA0003C380D /* CustomFont.swift in Sources */,
 				C1BB354F2458AEDF003C380D /* UIViewController+Exit.swift in Sources */,
 				C1BB35662458B525003C380D /* PZFinishViewController.swift in Sources */,
 				C1765A9D2459DDA50080ACA1 /* UIViewController+Keyboard.swift in Sources */,
 				C1765AAD2459E0AE0080ACA1 /* Animator.swift in Sources */,
 				C1347C46245AD40E00AAF44C /* PZVeriffViewController.swift in Sources */,
-				C1765AEB245A04140080ACA1 /* GetWorkerModel.swift in Sources */,
 				24F3D7C1244EFC39007CC75A /* PZIntroViewController.swift in Sources */,
 				C1765AA62459DFE70080ACA1 /* PaddedLabel.swift in Sources */,
 				C1765ADB2459FF9A0080ACA1 /* GetUserModel.swift in Sources */,
@@ -583,7 +587,7 @@
 				D47FCC9224CB2EA500265CB1 /* Puzzl.swift in Sources */,
 				D47FCC7C24CB2E8400265CB1 /* UIViewController+Alert.swift in Sources */,
 				D47FCC8324CB2E9600265CB1 /* PZExitViewController.swift in Sources */,
-				D47FCC8824CB2EA000265CB1 /* GetWorkerModel.swift in Sources */,
+				D47FCC8824CB2EA000265CB1 /* GetEmployeeModel.swift in Sources */,
 				D47FCC8D24CB2EA000265CB1 /* NetworkService.swift in Sources */,
 				D47FCC8124CB2E9600265CB1 /* RootNavigationController.swift in Sources */,
 				D47FCC7424CB2E8400265CB1 /* UIStoryboard+AppStroryboard.swift in Sources */,

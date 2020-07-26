@@ -12,9 +12,10 @@ class PassingData {
     static let shared = PassingData()
     
     public var firstGetUserModel: GetUserModel?
-    public var workerModel: GetWorkerModel?
+    public var employeeModel: GetEmployeeModel?
     public var signW2Model = SignW2Model()
     public var helloSignModel: HellosignModel?
+    public var SSCardURL: SSCardURL?
     
     
     public var isPassport = true

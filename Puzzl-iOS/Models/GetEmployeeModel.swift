@@ -1,5 +1,5 @@
 //
-//  GetWorkerModel.swift
+//  GetEmployeeModel.swift
 //  Puzzl-iOS
 //
 //  Created by Artem Dudinski on 4/29/20.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class GetWorkerModel: Codable {
+class GetEmployeeModel: Codable {
     
     var email: String
     var firstName: String
