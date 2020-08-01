@@ -60,27 +60,29 @@ public class Puzzl {
                 
 //                PassingData.shared.signW2Model.createdAt = response.createdAt
             } else if let _ = response.error {
+                print("failed to get EmployeeInfo")
                 print("hmmmmm")
                 self.error = "Error"
             }
             group.leave()
         }
         
-        group.enter()
-        ResponseService.shared.generateSSCardPutURL { (response) in
-
-                    if let response = response.response {
-                        PassingData.shared.SSCardURL = response
-                        print("success created S3 URL")
-                        
-        //                PassingData.shared.signW2Model.createdAt = response.createdAt
-                    } else if let _ = response.error {
-                        print("hmmmmm")
-                        self.error = "Error"
-                    }
-                    group.leave()
-                }
-        
+//        group.enter()
+//        ResponseService.shared.generateSSCardPutURL { (response) in
+//
+//                    if let response = response.response {
+//                        PassingData.shared.SSCardURL = response
+//                        print("success created S3 URL")
+//
+//        //                PassingData.shared.signW2Model.createdAt = response.createdAt
+//                    } else if let _ = response.error {
+//                        print("failed to get S3")
+//                        print("hmmmmm")
+//                        self.error = "Error"
+//                    }
+//                    group.leave()
+//                }
+//
         group.notify(queue: .main, execute: {
             if self.error == "Error" {
                 self.delegate?.getStatus(status: .error)

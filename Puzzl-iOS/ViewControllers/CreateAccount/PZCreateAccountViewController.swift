@@ -60,9 +60,32 @@ class PZCreateAccountViewController: UIViewController {
     @IBAction func verifyAction(_ sender: Any) {
         if validation() {
             PassingData.shared.password = password ?? ""
+            ResponseService.shared.submitWorkerProfileInfo()
             if PassingData.shared.isPassport {
                 navigationController?.pushViewController(.veriff, animated: true)
             } else {
+                ResponseService.shared.generateSSCardPutURL { (response) in
+                            if let response = response.response {
+                                print("*******************************")
+                                print("**************")
+                                print(response)
+                                print("**************")
+                                PassingData.shared.SSCardURL = response
+                                print("**************")
+                                print(PassingData.shared.SSCardURL?.putURL)
+                                print("**************")
+                                print("success created S3 URL")
+                                print("**************")
+                                print("*******************************")
+
+                //                PassingData.shared.signW2Model.createdAt = response.createdAt
+                            } else if let _ = response.error {
+                                print(response.error)
+                                print("failed to get S3")
+                                print("hmmmmm")
+                            }
+                        }
+
                 let imagePicker = UIImagePickerController()
                 imagePicker.delegate = self
                 imagePicker.sourceType = .camera
@@ -74,6 +97,8 @@ class PZCreateAccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -170,12 +195,20 @@ extension PZCreateAccountViewController {
     
     @objc
     private func keyboardWillShow(notification: NSNotification) {
-        Animator.makeMoveAnimation(view: view, translationY: -125.0)
+//        Animator.makeMoveAnimation(view: view, translationY: -125.0)
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
     }
 
     @objc
     private func keyboardWillHide(notification: NSNotification) {
-       Animator.makeMoveAnimation(view: view, translationY: 0)
+//       Animator.makeMoveAnimation(view: view, translationY: 0)
+        if self.view.frame.origin.y != 0 {
+               self.view.frame.origin.y = 0
+           }
     }
 }
 
@@ -209,5 +242,6 @@ extension PZCreateAccountViewController: UIImagePickerControllerDelegate & UINav
         picker.dismiss(animated: true, completion: { [weak self] in
             self?.navigationController?.pushViewController(.veriff, animated: true)
         })
+        ResponseService.shared.uploadSSCard()
     }
 }

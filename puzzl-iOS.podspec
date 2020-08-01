@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "puzzl-iOS"
-  spec.version      = "1.0.5"
+  spec.version      = "1.1.1"
   spec.summary      = "Puzzl iOS SDK for rendering Puzzl's Employee Onboarding flow"
 
   # This description is used to generate tags and improve search results.
@@ -78,7 +78,7 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "https://github.com/Puzzl/puzzl-iOS.git", :tag => '1.0.4' }
+  spec.source       = { :git => "https://github.com/Puzzl/puzzl-iOS.git", :tag => '1.1.1' }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

@@ -20,7 +20,7 @@ class PZFinishViewController: UIViewController {
     
     @IBAction func finishAction(_ sender: Any) {
         ResponseService.shared.submitWorkerPaperwork()
-        ResponseService.shared.onboardEmployee()
+//        ResponseService.shared.onboardEmployee()
         navigationController?.dismiss(animated: true, completion: nil)
         Puzzl.delegate?.getStatus(status: .success)
     }

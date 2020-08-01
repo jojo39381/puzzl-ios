@@ -59,6 +59,7 @@ class NetworkService {
                 return
             } else {
                 guard let jsonData = response.data else {
+                    print("JSON ERROR")
                     completion(Response(response: nil, error: .defaultError))
                     return
                 }
@@ -71,7 +72,7 @@ class NetworkService {
             completion(Response(response: nil, error: .defaultError))
             return
         }
-        print(jsonData)
+        print(NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue))
         do {
             if isBaseResponse {
                 let response = try JSONDecoder().decode(BaseResponse<T>.self, from: jsonData)
@@ -89,7 +90,7 @@ class NetworkService {
             print("----------------------")
             print("Decoding Error: \(decodingError)")
             print("----------------------")
-            completion(Response(response: nil, error: .decodingError))
+            completion(Response(response: nil, error: ApiError(type: .custom, message: NSString(data: response.data! as! Data, encoding: String.Encoding.utf8.rawValue) as String?)))
             return
         }
     }
@@ -114,7 +115,7 @@ class NetworkService {
     }
     
     public static func getUploadHeaders() -> HTTPHeaders {
-        return ["Content-type" : "image/jpeg"]
+        return ["Content-Type" : "image/jpeg"]
     }
 }
 

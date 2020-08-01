@@ -63,7 +63,7 @@ class PZDatePickerViewController: UIViewController {
         // initial setup
         blurView?.effect = nil
         titleLabel?.text = popupTitle
-        doneButton?.setTitle("Готово", for: .normal)
+        doneButton?.setTitle("Submit", for: .normal)
         doneButton?.titleLabel?.font = UIFont.systemFont(ofSize: 17.scalable, weight: .medium)
         
         constraintBottom?.constant = -(pickerViewHeight + safeAreaBottomInset)

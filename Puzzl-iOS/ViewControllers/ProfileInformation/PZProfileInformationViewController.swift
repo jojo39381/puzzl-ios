@@ -69,7 +69,6 @@ class PZProfileInformationViewController: UIViewController {
         let stirng = "\(ssn1 ?? "0")\(ssn2 ?? "0")\(ssn3 ?? "0")"
         PassingData.shared.last4 = ssn3
         PassingData.shared.signW2Model.ssn = stirng
-        ResponseService.shared.submitWorkerProfileInfo()
         let createAccount = UIViewController.createAccount
         navigationController?.pushViewController(createAccount, animated: true)
     }
@@ -77,6 +76,8 @@ class PZProfileInformationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -166,16 +167,25 @@ extension PZProfileInformationViewController {
     
     @objc
     private func keyboardWillShow(notification: NSNotification) {
-        Animator.makeMoveAnimation(view: view, translationY: -125.0)
-    }
+        //        Animator.makeMoveAnimation(view: view, translationY: -125.0)
+            if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+                if self.view.frame.origin.y == 0 {
+                    self.view.frame.origin.y -= keyboardSize.height
+                }
+            }
+        }
 
     @objc
     private func keyboardWillHide(notification: NSNotification) {
-       Animator.makeMoveAnimation(view: view, translationY: 0)
-    }
+       //       Animator.makeMoveAnimation(view: view, translationY: 0)
+           if self.view.frame.origin.y != 0 {
+                  self.view.frame.origin.y = 0
+              }
+       }
     
     @objc
     private func showDatePicker() {
+        dismissKeyboard()
         let datePicker = PZDatePickerViewController.open(from: self, popupTitle: "Choose date")
         datePicker.onDateSelection = { [weak self] date in
             guard let date = date else { return }
@@ -203,7 +213,7 @@ extension PZProfileInformationViewController: UITextFieldDelegate {
         case stateTextField:
             PassingData.shared.signW2Model.state = textField.text ?? ""
         case zipTextField:
-            PassingData.shared.signW2Model.zip = Int(textField.text ?? "") ?? 0
+            PassingData.shared.signW2Model.zip = textField.text ?? ""
         case cityTextField:
             PassingData.shared.signW2Model.city = textField.text ?? ""
         case firstSocialNumberTextField:

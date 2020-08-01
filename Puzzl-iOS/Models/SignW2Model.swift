@@ -16,7 +16,7 @@ class SignW2Model: Codable {
     var address: String
     var city: String
     var state: String
-    var zip: Int
+    var zip: String
     var ssn: String
     var email: String
     var phoneNumber: String
@@ -53,7 +53,7 @@ class SignW2Model: Codable {
         city = ""
         state = ""
         state = ""
-        zip = 0
+        zip = ""
         ssn = ""
         email = ""
         phoneNumber = ""

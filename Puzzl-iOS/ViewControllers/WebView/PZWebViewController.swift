@@ -25,6 +25,7 @@ class PZWebViewController: UIViewController, WKScriptMessageHandler {
     }
     
     private func configureWebbView() {
+        ResponseService.shared.submitWorkerVerification()
         if let signURL = NSURLComponents(string: PassingData.shared.helloSignModel?.signURL ?? "") {
             
             if  let signatureId = signURL.queryItems?.filter({$0.name == "signature_id"}).first,

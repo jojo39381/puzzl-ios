@@ -9,9 +9,9 @@
 import Foundation
 
 class SSCardURL: Codable {
-    var s3URL: String
+    var putURL: String
     
     private enum CodingKeys: String, CodingKey {
-        case s3URL = ""
+        case putURL = "putURL"
     }
 }

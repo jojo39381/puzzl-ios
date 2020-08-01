@@ -36,7 +36,8 @@ extension ResponseService {
     }
     
     public func getEmployeeInfo(completion:@escaping ((Response<GetEmployeeModel>)->())) {
-        var url = "\(BASE_URL)/getEmployeeInfo"
+        
+        var url = "\(BASE_URL)/getWorkerInfo"
         let parameters: [String : String] =    ["companyID" : "\(Puzzl.companyID)",
                                                 "employeeID" : "\(Puzzl.employeeID)"]
         
@@ -75,6 +76,8 @@ extension ResponseService {
     }
     
     public func submitWorkerProfileInfo(){
+        
+        
         let url = "\(BASE_URL)/submitWorkerProfileInfo"
         Alamofire.upload(multipartFormData: { (formData) in
             formData.append(PassingData.shared.signW2Model.companyID.data(using: .utf8) ?? Data(), withName: "companyID")
@@ -92,9 +95,15 @@ extension ResponseService {
             formData.append(PassingData.shared.signW2Model.city.data(using: .utf8) ?? Data(), withName: "city")
             formData.append(PassingData.shared.signW2Model.state.data(using: .utf8) ?? Data(), withName: "state")
             formData.append(PassingData.shared.signW2Model.ssn.data(using: .utf8) ?? Data(), withName: "ssn")
+             formData.append(PassingData.shared.signW2Model.phoneNumber.data(using: .utf8) ?? Data(), withName: "phone_number")
+            
+            formData.append(PassingData.shared.signW2Model.zip.data(using: .utf8) ?? Data (), withName: "zip")
+            
             if let last4 = PassingData.shared.last4 {
                 formData.append(last4.data(using: .utf8) ?? Data(), withName: "last4_ssn")
             }
+        
+            
             formData.append(PassingData.shared.signW2Model.email.data(using: .utf8) ?? Data(), withName: "email")
             formData.append(PassingData.shared.password.data(using: .utf8) ?? Data(), withName: "password")
         }, usingThreshold: 1, to: url, method: .post, headers: NetworkService.getHeaders()) { (status) in
@@ -114,7 +123,6 @@ extension ResponseService {
     
     public func submitWorkerVerification(){
         
-        uploadSSCard()
         
         let url = "\(BASE_URL)/submitWorkerVerification"
         Alamofire.upload(multipartFormData: { (formData) in
@@ -139,7 +147,7 @@ extension ResponseService {
         
     }
     public func submitWorkerPaperwork(){
-        let url = "\(BASE_URL)/onboardEmployee"
+        let url = "\(BASE_URL)/submitWorkerPaperwork"
                 
         Alamofire.upload(multipartFormData: { (formData) in
             formData.append(PassingData.shared.signW2Model.companyID.data(using: .utf8) ?? Data(), withName: "companyID")
@@ -169,8 +177,9 @@ extension ResponseService {
     }
     
     public func generateSSCardPutURL(completion:@escaping ((Response<SSCardURL>)->())) {
-    var url = "\(BASE_URL)/generate-sscard-put-url"
-    let parameters: [String : String] =    ["Key" : "\(PassingData.shared.signW2Model.email.data(using: .utf8))-sscard",
+    var url = "https://api.joinpuzzl.com/generate-sscard-put-url"
+    print(PassingData.shared.signW2Model.email)
+    let parameters: [String : String] =    ["Key" : "\(PassingData.shared.signW2Model.email)-sscard",
     "ContentType" : "image/jpeg"]
     
     do {
@@ -186,33 +195,89 @@ extension ResponseService {
     
     public func uploadSSCard(){
         let image:UIImage = PassingData.shared.driversPhoto!
-        guard let data = image.jpegData(compressionQuality: 1.0) else {
+        guard let imageData = image.jpegData(compressionQuality: 1.0) else {
           let err = NSError(domain: "pl.appbeat", code: 9_999, userInfo: ["Data error": "Was not able to prepare image from data."])
          print(err)
           return
         }
 
 //        let strBase64 = imageData.base64EncodedString(options: .lineLength64Characters)
+        let url = "\(PassingData.shared.SSCardURL!.putURL)"
+        let headers = [
+            "Content-Type": "image/jpeg"
+        ]
+//        let parameters: [String : String] =    ["Key" : "\(PassingData.shared.signW2Model.email)-sscard", "Content-Type" : "image/jpeg"]
+        print("***********************************")
+        print("****************")
+        print(url)
+        print("****************")
+        print("DATA")
+        print(imageData)
+        print("***********************************")
         
-        var url = PassingData.shared.SSCardURL!.s3URL
-        
-        Alamofire.upload(multipartFormData: { (formData) in
-            formData.append(data, withName: "file")
-        }, to: url, method: .put, headers: nil){
-            (status) in
-                switch status {
-                case .success(let result, _, _):
-                    result.responseJSON(completionHandler: { (response) in
-                        print(response.result.value ?? "No value")
-                        //completion(response.result)
-                    })
-                case .failure(_):
-                    print("error")
-                    print(status)
+        Alamofire.upload(imageData, to: url, method: .put, headers: headers)
+            .responseData {
+                response in
+                print(response)
+                guard let httpResponse = response.response else {
+                     print("Something went wrong uploading")
+                     return
                 }
-            }
 
+                if let publicUrl = url.components(separatedBy: "?").first {
+                     print(publicUrl)
+                }
         }
+        
+//        Alamofire.upload(multipartFormData: { (multipartFormData) in
+//            multipartFormData.append(imageData, withName: "file", fileName: "image.jpg", mimeType: "image/jpeg")
+//            //Any Post Params if you have.
+//            for (key, value) in parameters {
+//                multipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
+//            }
+//        }, usingThreshold: 1, to:url, method: .put, headers: NetworkService.getUploadHeaders()) //uploadUrlStr: upload url in your case
+//        { (result) in
+//            switch result {
+//            case .success(let upload, _, _):
+//                upload.uploadProgress(closure: { (progress) in
+//                    print("Uploading")
+//                    print(CGFloat(progress.fractionCompleted * 100))
+//                })
+//
+//                upload.responseString { response in
+//                    print("Upload Finished")
+//                    print(response)
+//                    guard let resultValue = response.result.value else {
+//                        NSLog("Result value in response is nil")
+//                        return
+//                    }
+//
+//                }
+//
+//            case .failure(let encodingError):
+//                print(encodingError.localizedDescription)
+//            }
+        }
+
+//        Alamofire.upload(multipartFormData: { (formData) in
+//            formData.append(_: InputStream(data: imageData), withLength: UInt64(imageData.count), headers:  ["Content-Disposition": "form-data; name=\"file\"",
+//               "ContentType" : "image/jpeg"])
+//        }, to: url, method: .put, headers: NetworkService.getUploadHeaders()){
+//            (status) in
+//                switch status {
+//                case .success(let result, _, _):
+//                    result.responseJSON(completionHandler: { (response) in
+//                        print(response.result ?? "No value")
+//                        //completion(response.result)
+//                    })
+//                case .failure(_):
+//                    print("error")
+//                    print(status)
+//                }
+//            }
+        
+        
+
         
     
     public func onboardEmployee() {
