@@ -30,7 +30,7 @@ class PZProfileInformationViewController: UIViewController {
     
     // MARK: - Button
     @IBOutlet var createButton: UIButton?
-    
+
     // MARK: - Constraints
     @IBOutlet var constraintTitleTop: NSLayoutConstraint? //65
     @IBOutlet var constraintSubtitleTop: NSLayoutConstraint? //11
@@ -41,6 +41,8 @@ class PZProfileInformationViewController: UIViewController {
     @IBOutlet var constraintButtonTop: NSLayoutConstraint? //32
     @IBOutlet var constraintButtonHeight: NSLayoutConstraint? //50
     
+
+    @IBOutlet weak var pfScroll: UIScrollView!
     private var ssn1: String?
     private var ssn2: String?
     private var ssn3: String?
@@ -75,10 +77,19 @@ class PZProfileInformationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        pfScroll.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + 100)
         setup()
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        firstNameTextField!.text = "\(PassingData.shared.employeeModel!.firstName)"
+        lastNameTextField!.text = "\(PassingData.shared.employeeModel!.lastName)"
+        
     }
+    
+//   override func viewDidLayoutSubviews() {
+//    self.pfScroll.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + 100)
+//
+//    }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)

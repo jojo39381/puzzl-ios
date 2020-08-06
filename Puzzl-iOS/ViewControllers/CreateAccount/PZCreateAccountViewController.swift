@@ -24,8 +24,8 @@ class PZCreateAccountViewController: UIViewController {
     @IBOutlet var confirmPasswordTextField: TextField?
     
     // MARK: - Views
-    @IBOutlet var firsView: UIView?
-    @IBOutlet var secondView: UIView?
+    @IBOutlet var firsView: UIScrollView?
+    @IBOutlet var secondView: UIScrollView?
     
     // MARK: - Buttons
     @IBOutlet var driveButton: UIButton?
@@ -44,7 +44,8 @@ class PZCreateAccountViewController: UIViewController {
     
     private var password: String?
     private var confirmPassword: String?
-
+    
+    @IBOutlet weak var pfScrollAccount: UIScrollView!
     @IBAction func driveAction(_ sender: UIButton) {
         firsView?.backgroundColor = #colorLiteral(red: 0.02058316767, green: 0.4855468869, blue: 0.8905407786, alpha: 1)
         secondView?.backgroundColor = .white
@@ -66,23 +67,12 @@ class PZCreateAccountViewController: UIViewController {
             } else {
                 ResponseService.shared.generateSSCardPutURL { (response) in
                             if let response = response.response {
-                                print("*******************************")
-                                print("**************")
-                                print(response)
-                                print("**************")
-                                PassingData.shared.SSCardURL = response
-                                print("**************")
-                                print(PassingData.shared.SSCardURL?.putURL)
-                                print("**************")
-                                print("success created S3 URL")
-                                print("**************")
-                                print("*******************************")
+                                print("Successfully created profile")
 
                 //                PassingData.shared.signW2Model.createdAt = response.createdAt
                             } else if let _ = response.error {
                                 print(response.error)
-                                print("failed to get S3")
-                                print("hmmmmm")
+                                print("Internal Error")
                             }
                         }
 
@@ -96,9 +86,12 @@ class PZCreateAccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        pfScrollAccount.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + 100)
+
         setup()
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        emailTextField!.text = "\(PassingData.shared.employeeModel!.email)"
     }
     
     override func viewWillAppear(_ animated: Bool) {

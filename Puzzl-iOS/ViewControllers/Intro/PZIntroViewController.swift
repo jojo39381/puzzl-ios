@@ -37,6 +37,8 @@ class PZIntroViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        print(subtitleLabel?.text)
+        subtitleLabel?.text = "\(PassingData.shared.firstGetUserModel!.businessName) uses Puzzl to collect required onboarding information.  This process should take only 2 minutes."
     }
     
     override func viewWillDisappear(_ animated: Bool) {

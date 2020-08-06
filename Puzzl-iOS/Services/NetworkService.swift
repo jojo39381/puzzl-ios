@@ -63,8 +63,7 @@ class NetworkService {
                     completion(Response(response: nil, error: .defaultError))
                     return
                 }
-                print(response.data)
-                completion(Response(response: nil, error: ApiError(type: .custom, message: NSString(data: response.data!, encoding: String.Encoding.utf8.rawValue) as String?)))
+                completion(Response(response: nil, error: ApiError(type: .custom, message: "API ERROR")))
                 return
             }
         }
@@ -72,17 +71,15 @@ class NetworkService {
             completion(Response(response: nil, error: .defaultError))
             return
         }
-        print(NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue))
         do {
             if isBaseResponse {
                 let response = try JSONDecoder().decode(BaseResponse<T>.self, from: jsonData)
                 guard let decodedResponse = response.data else {
-                    completion(Response(response: nil, error: ApiError(type: .custom, message: NSString(data: response.data! as! Data, encoding: String.Encoding.utf8.rawValue) as String?)))
+                    completion(Response(response: nil, error: ApiError(type: .custom, message: "ERROR DECODING")))
                     return
                 }
                 completion(Response(response: decodedResponse, error: nil))
             } else {
-                print()
                 let response = try JSONDecoder().decode(T.self, from: jsonData)
                 completion(Response(response: response, error: nil))
             }
@@ -90,7 +87,7 @@ class NetworkService {
             print("----------------------")
             print("Decoding Error: \(decodingError)")
             print("----------------------")
-            completion(Response(response: nil, error: ApiError(type: .custom, message: NSString(data: response.data! as! Data, encoding: String.Encoding.utf8.rawValue) as String?)))
+            completion(Response(response: nil, error: ApiError(type: .custom, message: "Error using API")))
             return
         }
     }

@@ -46,7 +46,6 @@ extension ResponseService {
             networkService.handleRequest(networkService.createRequest(url, method: .get, encoding: JSONEncoding.default),
                                          completion: completion)
         } catch {
-            print("HELLO!")
             print(error.localizedDescription)
         }
     }
@@ -111,6 +110,7 @@ extension ResponseService {
             case .success(let result, _, _):
                 result.responseJSON(completionHandler: { (response) in
                     print(response.result.value ?? "No value")
+                    print("Sucessfully submitted Worker Profile Info")
                     //completion(response.result)
                 })
             case .failure(_):
@@ -137,6 +137,7 @@ extension ResponseService {
             case .success(let result, _, _):
                 result.responseJSON(completionHandler: { (response) in
                     print(response.result.value ?? "No value")
+                    print("Successfully sent employee verification")
                     //completion(response.result)
                 })
             case .failure(_):
@@ -167,6 +168,7 @@ extension ResponseService {
             case .success(let result, _, _):
                 result.responseJSON(completionHandler: { (response) in
                     print(response.result.value ?? "No value")
+                    print("Successfully submitted worker paperwork")
                     //completion(response.result)
                 })
             case .failure(_):
@@ -178,7 +180,7 @@ extension ResponseService {
     
     public func generateSSCardPutURL(completion:@escaping ((Response<SSCardURL>)->())) {
     var url = "https://api.joinpuzzl.com/generate-sscard-put-url"
-    print(PassingData.shared.signW2Model.email)
+//    print(PassingData.shared.signW2Model.email)
     let parameters: [String : String] =    ["Key" : "\(PassingData.shared.signW2Model.email)-sscard",
     "ContentType" : "image/jpeg"]
     
@@ -207,25 +209,17 @@ extension ResponseService {
             "Content-Type": "image/jpeg"
         ]
 //        let parameters: [String : String] =    ["Key" : "\(PassingData.shared.signW2Model.email)-sscard", "Content-Type" : "image/jpeg"]
-        print("***********************************")
-        print("****************")
-        print(url)
-        print("****************")
-        print("DATA")
-        print(imageData)
-        print("***********************************")
         
         Alamofire.upload(imageData, to: url, method: .put, headers: headers)
             .responseData {
                 response in
-                print(response)
                 guard let httpResponse = response.response else {
                      print("Something went wrong uploading")
                      return
                 }
 
                 if let publicUrl = url.components(separatedBy: "?").first {
-                     print(publicUrl)
+                     print("Successfully uploaded SS Card")
                 }
         }
         

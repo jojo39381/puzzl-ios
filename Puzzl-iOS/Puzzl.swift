@@ -45,7 +45,6 @@ public class Puzzl {
                 PassingData.shared.firstGetUserModel = response
                 print("success getUserInfo")
             } else if let _ = response.error {
-                print("well!!!")
                 self.error = "Error"
             }
             group.leave()
@@ -61,7 +60,6 @@ public class Puzzl {
 //                PassingData.shared.signW2Model.createdAt = response.createdAt
             } else if let _ = response.error {
                 print("failed to get EmployeeInfo")
-                print("hmmmmm")
                 self.error = "Error"
             }
             group.leave()

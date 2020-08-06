@@ -96,10 +96,7 @@ extension PZVeriffViewController {
                                                     PassingData.shared.veriffId = verification.id
                                                     self?.veriff(url: verification.host , token: verification.sessionToken)
                                                 }
-                                                print("----------------------")
-                                                print("VERIFF ID")
-                                                    print(PassingData.shared.veriffId)
-                                                print("----------------------")
+ 
         })
     }
     

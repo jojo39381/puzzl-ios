@@ -16,8 +16,8 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "puzzl-iOS"
-  spec.version      = "1.1.1"
-  spec.summary      = "Puzzl iOS SDK for rendering Puzzl's Employee Onboarding flow"
+  spec.version      = "1.7.6"
+  spec.summary      = "Puzzl iOS SDK"
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -26,7 +26,7 @@ Pod::Spec.new do |spec|
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   spec.description  = "Puzzl iOS SDK for rendering Puzzl's Employee Onboarding flow"
 
-  spec.homepage     = "https://github.com/Puzzl/puzzl-iOS"
+  spec.homepage     = "https://github.com/Puzzl/Puzzl-iOS-Pod"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -78,7 +78,8 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "https://github.com/Puzzl/puzzl-iOS.git", :tag => '1.1.1' }
+  spec.source       = { :http => "https://puzzl-ios-cocoapod.s3.amazonaws.com/puzzl-iOS.zip"}
+  spec.ios.vendored_frameworks = 'Puzzl_iOS.framework'
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -89,9 +90,9 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
   spec.swift_versions = ['5.1', '5.2']
-  spec.resources = "Puzzl-iOS/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}", "*.{png,jpeg,jpg,storyboard,xib,xcassets}" 
-  spec.source_files       = 'Puzzl-iOS/Common/*.swift'
-  spec.ios.source_files   = 'Puzzl-iOS/Extensions/*.swift', 'Puzzl-iOS/Models/*.swift', 'Puzzl-iOS/Services/*.swift', 'Puzzl-iOS/ViewControllers/**/*.swift', 'Puzzl-iOS/*.swift'
+  # spec.resources = "Puzzl-iOS/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}", "*.{png,jpeg,jpg,storyboard,xib,xcassets}" 
+  # spec.source_files       = 'Puzzl-iOS/Common/*.swift'
+  # spec.ios.source_files   = 'Puzzl-iOS/Extensions/*.swift', 'Puzzl-iOS/Models/*.swift', 'Puzzl-iOS/Services/*.swift', 'Puzzl-iOS/ViewControllers/**/*.swift', 'Puzzl-iOS/*.swift'
 
 
   # spec.public_header_files = "Classes/**/*.h"
